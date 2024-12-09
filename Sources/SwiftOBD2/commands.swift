@@ -223,7 +223,7 @@ public enum OBDCommand: Codable, Hashable, Comparable {
 
     public enum Mode3: CaseIterable, Codable, Comparable {
         case GET_DTC
-        var properties: CommandProperties {
+        public var properties: CommandProperties {
             switch self {
             case .GET_DTC: return CommandProperties("03", "Get DTCs", 0, .dtc)
             }
@@ -232,7 +232,7 @@ public enum OBDCommand: Codable, Hashable, Comparable {
 
     public enum Mode4: CaseIterable, Codable, Comparable {
         case CLEAR_DTC
-        var properties: CommandProperties {
+        public var properties: CommandProperties {
             switch self {
             case .CLEAR_DTC: return CommandProperties("04", "Clear DTCs and freeze data", 0, .none)
             }
@@ -338,7 +338,7 @@ public enum OBDCommand: Codable, Hashable, Comparable {
         case CALIBRATION_ID
         case CVN_MESSAGE_COUNT
         case CVN
-        var properties: CommandProperties {
+        public var properties: CommandProperties {
             switch self {
             case .PIDS_9A: return CommandProperties("0900", "Supported PIDs [01-20]", 7, .pid)
             case .VIN_MESSAGE_COUNT: return CommandProperties("0901", "VIN Message Count", 3, .count)
