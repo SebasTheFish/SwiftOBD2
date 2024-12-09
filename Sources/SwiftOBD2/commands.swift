@@ -419,7 +419,7 @@ extension OBDCommand.General {
 }
 
 extension OBDCommand.Mode1 {
-    var properties: CommandProperties {
+    public var properties: CommandProperties {
         switch self {
         case .pidsA: return CommandProperties("0100", "Supported PIDs [01-20]", 5, .pid)
         case .status: return CommandProperties("0101", "Status since DTCs cleared", 5, .status)
@@ -522,7 +522,7 @@ extension OBDCommand.Mode1 {
 }
 
 extension OBDCommand.Mode6 {
-    var properties: CommandProperties {
+    public var properties: CommandProperties {
         switch self {
         case .MIDS_A: return CommandProperties("0600", "Supported MIDs [01-20]", 0, .pid)
         case .MONITOR_O2_B1S1: return CommandProperties("0601", "O2 Sensor Monitor Bank 1 - Sensor 1", 0, .monitor)
